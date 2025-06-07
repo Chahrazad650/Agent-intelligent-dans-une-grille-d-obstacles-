@@ -2,7 +2,7 @@ import random
 import os
 import heapq
 
-# Affichage élégant de la carte de jeu
+# Affichage
 def afficher_carte(terrain):
     print("\nCarte de la mission :\n")
     for ligne in terrain:
@@ -11,7 +11,7 @@ def afficher_carte(terrain):
             print(f"{cellule:^3}", end=" ")
         print("|")
 
-# Création des murs (obstacles) selon la difficulté
+# Création des murs (obstacles)
 def inserer_murs(terrain, proportion):
     lignes, colonnes = len(terrain), len(terrain[0])
     total = lignes * colonnes

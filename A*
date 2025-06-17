@@ -34,9 +34,9 @@ def demander_dimensions():
             if l > 2 and c > 2:
                 return l, c
             else:
-                print("⚠️ Valeurs trop petites !")
+                print("Valeurs trop petites !")
         except ValueError:
-            print("⚠️ Saisie invalide, réessaye !")
+            print("Saisie invalide, réessaye !")
 
 # Niveau de difficulté (nombre d'obstacles)
 def choisir_difficulte():
@@ -53,7 +53,7 @@ def choisir_difficulte():
         elif niv == "3":
             return 0.50
         else:
-            print("🚫 Choix incorrect, recommence !")
+            print("Choix incorrect, recommence !")
 
 # Demande à l'utilisateur ou choix aléatoire pour START et GOAL
 def definir_positions(grille):
@@ -67,7 +67,7 @@ def definir_positions(grille):
         elif choix == "2":
             return selection_manuelle(grille)
         else:
-            print("❌ Saisie invalide.")
+            print("Saisie invalide !")
 
 def selection_aleatoire(grille):
     def point_vide():
@@ -91,13 +91,13 @@ def selection_manuelle(grille):
                 if 0 <= x < len(grille) and 0 <= y < len(grille[0]) and grille[x][y] == ".":
                     return (x, y)
                 else:
-                    print("🚫 Position invalide ou déjà occupée.")
+                    print("Position invalide ou déjà occupée ! ")
             except ValueError:
-                print("⚠️ Entrée invalide.")
+                print("Entrée invalide ! ")
     debut = saisir_point("Coordonnées du point de départ")
     fin = saisir_point("Coordonnées du point d'arrivée")
     while fin == debut:
-        print("⚠️ Départ et arrivée doivent être différents.")
+        print("Départ et arrivée doivent être différents ! ")
         fin = saisir_point("Coordonnées du point d'arrivée")
     return debut, fin
 
@@ -141,7 +141,7 @@ def astar(terrain, depart, objectif):
 # Lancement du jeu
 def demarrer_simulation():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("=== 🧠 Système A* : Mission Pathfinder ===\n")
+    print("===  Système A* : Mission Pathfinder ===\n")
     lignes, colonnes = demander_dimensions()
     niveau = choisir_difficulte()
 
